@@ -560,5 +560,76 @@ section {
 
 }
 
+.hidden {
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+}
+
+
+.show {
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+    transition:
+    0.8s ease;
+
+}
+
+
+
+.particle {
+
+    position:fixed;
+
+    bottom:-20px;
+
+    width:6px;
+
+    height:6px;
+
+    background:#c8a7ff;
+
+    border-radius:50%;
+
+    opacity:.4;
+
+    pointer-events:none;
+
+    animation:
+    rise linear forwards;
+
+}
+
+
+
+@keyframes rise {
+
+    from {
+
+        transform:
+        translateY(0);
+
+        opacity:.5;
+
+    }
+
+
+    to {
+
+        transform:
+        translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
 
 }
