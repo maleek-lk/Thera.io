@@ -1,119 +1,161 @@
+// Scroll reveal
 
-// Scroll reveal animation
-
-const revealElements = document.querySelectorAll(
-    ".feature-card, .companion, .price-card, .questions p"
+const elements =
+document.querySelectorAll(
+".feature-card,.companion,.price-card,.questions p"
 );
 
 
-const observer = new IntersectionObserver(
-    (entries) => {
+const observer =
+new IntersectionObserver(
+(entries)=>{
 
-        entries.forEach((entry) => {
+entries.forEach(entry=>{
 
-            if (entry.isIntersecting) {
+if(entry.isIntersecting){
 
-                entry.target.classList.add("show");
+entry.target.style.opacity="1";
 
-            }
+entry.target.style.transform="translateY(0)";
 
-        });
+}
 
-    },
-    {
-        threshold: 0.15
-    }
+});
+
+
+},
+{
+threshold:.15
+}
 );
 
 
 
-revealElements.forEach((element) => {
+elements.forEach(el=>{
 
-    element.classList.add("hidden");
+el.style.opacity="0";
 
-    observer.observe(element);
+el.style.transform=
+"translateY(50px)";
 
-});
-
-
-
-
-// Companion card interaction
-
-const companions = document.querySelectorAll(".companion");
+el.style.transition=
+"1s ease";
 
 
-companions.forEach((card)=>{
-
-    card.addEventListener("mouseenter", ()=>{
-
-        card.style.boxShadow =
-        "0 20px 50px rgba(155,108,255,0.35)";
-
-    });
-
-
-    card.addEventListener("mouseleave", ()=>{
-
-        card.style.boxShadow = "none";
-
-    });
+observer.observe(el);
 
 });
 
 
 
 
-// Smooth button scroll
 
-const buttons = document.querySelectorAll("button");
+// Companion 3D movement
+
+const cards =
+document.querySelectorAll(".companion");
 
 
-buttons.forEach((button)=>{
+cards.forEach(card=>{
 
-    button.addEventListener("click",()=>{
 
-        document.querySelector(".pricing")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+card.addEventListener(
+"mousemove",
+(e)=>{
 
-    });
+
+const box =
+card.getBoundingClientRect();
+
+
+const x =
+e.clientX-box.left;
+
+
+const y =
+e.clientY-box.top;
+
+
+
+const rotateY =
+(x/box.width-.5)*20;
+
+
+const rotateX =
+(y/box.height-.5)*-20;
+
+
+
+card.style.transform=
+`
+perspective(900px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-15px)
+`;
+
+
+
+});
+
+
+card.addEventListener(
+"mouseleave",
+()=>{
+
+card.style.transform="";
+
+});
 
 });
 
 
 
 
-// Floating background particles
 
-const createParticle = ()=>{
+// Geometric particles
 
-    const particle = document.createElement("div");
+function createParticle(){
 
-    particle.className="particle";
-
-
-    particle.style.left =
-    Math.random()*100+"vw";
+const p =
+document.createElement("div");
 
 
-    particle.style.animationDuration =
-    (Math.random()*5+5)+"s";
+p.className="particle";
 
 
-    document.body.appendChild(particle);
+p.style.left=
+Math.random()*100+"vw";
+
+
+p.style.animationDuration=
+(5+Math.random()*6)+"s";
+
+
+p.style.width=
+(5+Math.random()*12)+"px";
+
+
+p.style.height=
+p.style.width;
+
+
+document.body.appendChild(p);
 
 
 
-    setTimeout(()=>{
+setTimeout(()=>{
 
-        particle.remove();
+p.remove();
 
-    },10000);
-
-};
+},10000);
 
 
+}
 
-setInterval(createParticle,700);
+
+
+setInterval(
+createParticle,
+500
+);
