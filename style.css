@@ -271,6 +271,55 @@ button:hover{
 }
 
 
+.space-marquee{
+
+overflow:hidden;
+
+white-space:nowrap;
+
+padding:20px 0;
+
+opacity:.4;
+
+font-size:14px;
+
+letter-spacing:5px;
+
+}
+
+
+
+.space-marquee div{
+
+display:inline-block;
+
+animation:
+
+marquee 20s linear infinite;
+
+}
+
+
+
+@keyframes marquee{
+
+from{
+
+transform:
+translateX(100%);
+
+}
+
+
+to{
+
+transform:
+translateX(-100%);
+
+}
+
+}
+
 
 /* ================================
    COSMIC COMPANION CARDS
@@ -1013,48 +1062,57 @@ transparent 60%
 /* PARTICLES */
 
 
-.particle{
+..particle{
+
 
 position:fixed;
 
 bottom:-30px;
 
-width:12px;
-
-height:12px;
 
 background:
 
 linear-gradient(
 135deg,
-var(--violet),
-var(--pink),
-var(--cyan)
+#9b6cff,
+#ff8bd8,
+#8cecff
 );
 
 
 mix-blend-mode:
-
 screen;
+
+
+filter:
+
+blur(.5px);
+
+
+box-shadow:
+
+0 0 20px
+currentColor;
 
 
 animation:
 
-rise linear forwards;
+spaceRise linear forwards;
 
 
 }
 
 
 
-@keyframes rise{
+@keyframes spaceRise{
+
 
 to{
 
 transform:
 
 translateY(-120vh)
-rotate(360deg);
+rotate(720deg);
 
 
 opacity:0;
