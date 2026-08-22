@@ -272,71 +272,338 @@ button:hover{
 
 
 
-.companion-card{
-
-    width:250px;
-
-    height:250px;
-
-    border-radius:50%;
-
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-direction:column;
+/* ================================
+   COSMIC COMPANION CARDS
+================================ */
 
 
-    background:
+.companion-grid{
 
-    linear-gradient(
-    145deg,
-    rgba(255,255,255,.25),
-    rgba(255,255,255,.05)
-    );
+display:grid;
 
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
 
-    backdrop-filter:
-    blur(30px);
-
-
-    border:
-
-    1px solid
-    rgba(255,255,255,.3);
-
-
-    box-shadow:
-
-    inset 0 0 40px rgba(255,255,255,.15),
-
-    0 30px 80px rgba(155,108,255,.5);
-
-
-    animation:
-    float 6s infinite ease-in-out;
+gap:40px;
 
 }
 
 
 
-@keyframes float{
+.companion{
 
-50%{
+height:360px;
+
+position:relative;
+
+overflow:hidden;
+
+padding:35px;
+
+border-radius:40px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-end;
+
+isolation:isolate;
+
+border:1px solid rgba(255,255,255,.2);
+
+transition:.7s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+
+.companion:hover{
 
 transform:
-translateY(-20px);
+translateY(-20px)
+scale(1.03);
+
+
+}
+
+
+
+.companion h3,
+.companion p,
+.companion span{
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+
+.companion p{
+
+color:white;
+
+opacity:.8;
+
+}
+
+
+
+
+
+/* SHINE */
+
+.companion::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+120deg,
+transparent 30%,
+rgba(255,255,255,.45),
+transparent 60%
+);
+
+
+transform:
+translateX(-120%);
+
+
+transition:.8s;
+
+}
+
+
+
+.companion:hover::after{
+
+transform:
+translateX(120%);
+
+}
+
+
+
+
+
+/* LUNA MOON */
+
+.luna{
+
+
+background:
+
+
+radial-gradient(
+circle at 25% 20%,
+rgba(255,255,255,.8),
+transparent 5%
+),
+
+
+radial-gradient(
+circle at 70% 60%,
+#bba7ff,
+#5c3d91 40%,
+#160d29
+);
+
+
+box-shadow:
+
+0 40px 100px
+rgba(180,150,255,.45);
+
+
+
+}
+
+
+
+.luna::before{
+
+content:"";
+
+position:absolute;
+
+inset:-20%;
+
+background:
+
+radial-gradient(
+circle,
+transparent 30%,
+rgba(0,0,0,.45)
+);
+
+
+background-size:
+80px 80px;
+
+
+opacity:.4;
+
+}
+
+
+
+
+
+/* KAI GALAXY */
+
+
+.kai{
+
+
+background:
+
+
+radial-gradient(
+circle at 30% 30%,
+#ffffff22,
+transparent 3%
+),
+
+
+radial-gradient(
+circle at 70% 50%,
+#4d7cff,
+transparent 20%
+),
+
+
+linear-gradient(
+135deg,
+#020617,
+#000
+);
+
+
+
+box-shadow:
+
+0 40px 120px
+rgba(40,90,255,.45);
+
+
+}
+
+
+
+.kai::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background-image:
+
+radial-gradient(
+white 1px,
+transparent 1px
+);
+
+
+background-size:
+
+35px 35px;
+
+
+opacity:.25;
+
+}
+
+
+
+
+
+/* ADAM INTERGALACTIC FIRE */
+
+
+.adam{
+
+
+background:
+
+
+radial-gradient(
+circle at 40% 30%,
+#ffb07c,
+transparent 8%
+),
+
+
+linear-gradient(
+135deg,
+#ff3d3d,
+#71102d,
+#12000a
+);
+
+
+box-shadow:
+
+0 40px 120px
+rgba(255,60,80,.5);
+
+
+}
+
+
+
+.adam::before{
+
+content:"";
+
+position:absolute;
+
+inset:-50%;
+
+
+background:
+
+conic-gradient(
+transparent,
+#ff8a5c,
+transparent,
+#ff0033,
+transparent
+);
+
+
+animation:
+
+spin 8s linear infinite;
+
+
+opacity:.4;
+
+
+}
+
+
+
+@keyframes spin{
+
+to{
+
+transform:
+rotate(360deg);
 
 }
 
 }
-
 
 
 
