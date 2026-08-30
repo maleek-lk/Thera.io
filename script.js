@@ -1,22 +1,22 @@
-// Scroll reveal
-
-const elements =
-document.querySelectorAll(
-".feature-card,.companion,.price-card,.questions p"
-);
+/* =========================
+   THERA INTERACTIONS
+========================= */
 
 
-const observer =
-new IntersectionObserver(
+
+// Scroll Reveal
+
+const reveals = document.querySelectorAll(".reveal");
+
+
+const observer = new IntersectionObserver(
 (entries)=>{
 
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
+entry.target.classList.add("show");
 
 }
 
@@ -31,18 +31,9 @@ threshold:.15
 
 
 
-elements.forEach(el=>{
+reveals.forEach(section=>{
 
-el.style.opacity="0";
-
-el.style.transform=
-"translateY(50px)";
-
-el.style.transition=
-"1s ease";
-
-
-observer.observe(el);
+observer.observe(section);
 
 });
 
@@ -50,62 +41,32 @@ observer.observe(el);
 
 
 
-// Companion 3D movement
 
-const cards =
-document.querySelectorAll(".companion");
+// Companion Selection
 
 
-cards.forEach(card=>{
+const companions =
+document.querySelectorAll(".companion-card");
 
 
-card.addEventListener(
-"mousemove",
-(e)=>{
+companions.forEach(card=>{
 
 
-const box =
-card.getBoundingClientRect();
+card.addEventListener("click",()=>{
 
 
-const x =
-e.clientX-box.left;
+companions.forEach(item=>{
 
-
-const y =
-e.clientY-box.top;
-
-
-
-const rotateY =
-(x/box.width-.5)*20;
-
-
-const rotateX =
-(y/box.height-.5)*-20;
-
-
-
-card.style.transform=
-`
-perspective(900px)
-rotateX(${rotateX}deg)
-rotateY(${rotateY}deg)
-translateY(-15px)
-`;
-
-
+item.classList.remove("active");
 
 });
 
 
-card.addEventListener(
-"mouseleave",
-()=>{
+card.classList.add("active");
 
-card.style.transform="";
 
 });
+
 
 });
 
@@ -113,64 +74,160 @@ card.style.transform="";
 
 
 
-// Geometric particles
-
-function createParticle(){
-
-const p =
-document.createElement("div");
 
 
-p.className="particle";
+// Cosmic Particles
 
 
-p.style.left=
-Math.random()*100+"vw";
+const stars =
+document.querySelector(".stars");
 
 
-p.style.animationDuration=
-(5+Math.random()*6)+"s";
+for(let i=0;i<80;i++){
 
 
-p.style.width=
-(5+Math.random()*12)+"px";
+const particle =
+document.createElement("span");
 
 
-p.style.height=
-p.style.width;
+particle.className="particle";
 
 
-document.body.appendChild(p);
+particle.style.left =
+Math.random()*100+"%";
 
 
+particle.style.top =
+Math.random()*100+"%";
 
-setTimeout(()=>{
 
-p.remove();
+particle.style.animationDelay =
+Math.random()*5+"s";
 
-},10000);
+
+stars.appendChild(particle);
 
 
 }
 
 
 
-setInterval(
-createParticle,
-500
-);
 
 
-document.querySelectorAll("button[data-link]")
-.forEach(btn=>{
 
-btn.addEventListener("click",()=>{
+
+
+// Buttons
+
+
+const buttons =
+document.querySelectorAll(".action-btn");
+
+
+
+const WHATSAPP_LINK =
+"https://wa.me/YOUR_NUMBER";
+
+
+
+const FLUTTERWAVE_LINK =
+"YOUR_FLUTTERWAVE_PAYMENT_LINK";
+
+
+
+buttons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+const type =
+button.dataset.link;
+
+
+
+if(type==="whatsapp"){
 
 window.open(
-btn.dataset.link,
+WHATSAPP_LINK,
 "_blank"
 );
 
-});
+
+}
+
+
+
+if(type==="flutterwave"){
+
+window.open(
+FLUTTERWAVE_LINK,
+"_blank"
+);
+
+
+}
+
+
 
 });
+
+
+});
+
+
+
+
+
+
+
+// Floating geometric particles
+
+
+const shapes =
+[
+"◆",
+"◇",
+"✦",
+"✧",
+"○"
+];
+
+
+
+for(let i=0;i<25;i++){
+
+
+const shape =
+document.createElement("div");
+
+
+shape.className="geo";
+
+
+shape.innerHTML =
+shapes[
+Math.floor(
+Math.random()*shapes.length
+)
+];
+
+
+
+shape.style.left =
+Math.random()*100+"vw";
+
+
+shape.style.top =
+Math.random()*100+"vh";
+
+
+shape.style.animationDelay =
+Math.random()*10+"s";
+
+
+
+document.body.appendChild(shape);
+
+
+}
