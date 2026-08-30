@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,160 +12,136 @@
 
 <body>
 
-<header class="navbar">
-    <div class="logo">Thera</div>
+<div class="stars"></div>
 
-    <button class="nav-btn">
+<header class="navbar">
+
+    <div class="logo">
+        Thera
+    </div>
+
+    <button 
+        class="nav-btn action-btn"
+        data-link="whatsapp">
         Start Talking
     </button>
+
 </header>
+
 
 
 <main>
 
-<!-- Hero Section -->
-<section class="hero">
+
+<!-- HERO -->
+
+<section class="hero reveal">
+
+    <div class="hero-background"></div>
 
     <div class="hero-content">
 
-        <h1>
-            Your private AI companion
-            to talk with, reflect with,
-            and grow with.
-        </h1>
-
-        <p>
-            Sometimes you do not need advice.
-            Sometimes you just need someone who listens.
+        <p class="eyebrow">
+            Your personal AI companion
         </p>
 
-     <button 
-class="primary-btn"
-data-link="https://wa.me/message/OUF4STQZYSP5E1">
-Start Talking
-</button>
+
+        <h1>
+            Talk.
+            Reflect.
+            <span>Grow.</span>
+        </h1>
+
+
+        <p class="hero-text">
+
+            A private AI companion to talk with,
+            reflect with, and grow with.
+
+        </p>
+
+
+        <button 
+            class="primary-btn action-btn"
+            data-link="whatsapp">
+
+            Start Talking
+
+        </button>
+
 
     </div>
+
 
 
     <div class="hero-image">
-        <div class="glow"></div>
-      <div class="companion-card">
-    <img src="thera.png" alt="Thera AI Companion">
-</div>
-    </div>
 
-</section>
+        <div class="orb"></div>
 
-<section class="space-marquee">
-
-<div>
-THERA • AI COMPANION • REFLECTION • GROWTH • CONVERSATION • HUMAN CONNECTION • THERA • AI COMPANION •
-</div>
-
-</section>
-
-
-<!-- Feeling Section -->
-<section class="feeling">
-
-    <h2>
-        Feeling stuck?
-    </h2>
-
-    <div class="questions">
-
-        <p>Overthinking again?</p>
-        <p>Need someone to listen?</p>
-        <p>Want better conversations?</p>
-        <p>Want to improve yourself?</p>
+        <img 
+        src="assets/thera.png"
+        alt="Thera AI Companion">
 
     </div>
 
-    <h3>
-        Thera is here.
-    </h3>
 
 </section>
 
 
 
 
-<!-- Features -->
 
-<section class="features">
+
+<!-- EMOTIONAL HOOK -->
+
+<section class="section emotional reveal">
 
 <h2>
-What Thera Helps With
+Sometimes you don't need advice.
 </h2>
 
+<p>
+Sometimes you just need someone who listens.
+</p>
 
-<div class="feature-grid">
 
-<div class="feature-card">
-    💜
-    <h3>Emotional Support</h3>
-    <p>
-        Talk through thoughts and feelings.
-    </p>
+<div class="question-grid">
+
+<div>
+Overthinking again?
+</div>
+
+<div>
+Can't say what you feel?
+</div>
+
+<div>
+Need someone to talk to?
+</div>
+
+<div>
+Want better conversations?
+</div>
+
 </div>
 
 
-<div class="feature-card">
-    🧠
-    <h3>Self Reflection</h3>
-    <p>
-        Understand yourself better.
-    </p>
-</div>
-
-
-<div class="feature-card">
-    🌱
-    <h3>Social Skills</h3>
-    <p>
-        Build confidence and communication.
-    </p>
-</div>
-
-
-<div class="feature-card">
-    ❤️
-    <h3>Relationships</h3>
-    <p>
-        Improve your connections.
-    </p>
-</div>
-
-
-<div class="feature-card">
-    📚
-    <h3>Learning</h3>
-    <p>
-        Study and solve problems.
-    </p>
-</div>
-
-
-<div class="feature-card">
-    ✨
-    <h3>Growth</h3>
-    <p>
-        Build better habits.
-    </p>
-</div>
-
-
-</div>
+<h3>
+Thera is here.
+</h3>
 
 </section>
 
 
 
 
-<!-- Companion Section -->
 
-<section class="companions">
+
+
+<!-- COMPANIONS -->
+
+<section class="section companions reveal">
+
 
 <h2>
 Choose Your Companion
@@ -174,7 +151,15 @@ Choose Your Companion
 <div class="companion-grid">
 
 
-<div class="luna">
+
+<div class="companion-card luna"
+data-companion="luna">
+
+
+<img src="assets/luna.png">
+
+
+<div class="companion-info">
 
 <h3>
 🌙 Thera Luna
@@ -184,11 +169,27 @@ Choose Your Companion
 Warm. Understanding. Empathetic.
 </p>
 
+<button class="choose-btn">
+Choose Luna
+</button>
+
+</div>
+
+
 </div>
 
 
 
-<div class="kai">
+
+
+<div class="companion-card kai"
+data-companion="kai">
+
+
+<img src="assets/kai.png">
+
+
+<div class="companion-info">
 
 <h3>
 🔥 Thera Kai
@@ -198,28 +199,60 @@ Warm. Understanding. Empathetic.
 Direct. Motivational. Goal-focused.
 </p>
 
+
+<button class="choose-btn">
+Choose Kai
+</button>
+
+
+</div>
+
+
 </div>
 
 
 
-<div class="adam">
+
+
+
+<div class="companion-card adam active"
+data-companion="adam">
+
+
+<img src="assets/adam.png">
+
+
+<div class="companion-info">
 
 <h3>
 🧠 Thera Adam
 </h3>
 
+
 <p>
 Patient. Reflective. Thoughtful listener.
 </p>
+
 
 <span>
 Default Companion
 </span>
 
+
+<button class="choose-btn">
+Choose Adam
+</button>
+
+
 </div>
 
 
 </div>
+
+
+
+</div>
+
 
 </section>
 
@@ -227,9 +260,104 @@ Default Companion
 
 
 
-<!-- Pricing -->
 
-<section class="pricing">
+
+<!-- FEATURES -->
+
+
+<section class="section features reveal">
+
+
+<h2>
+What Thera Helps With
+</h2>
+
+
+<div class="feature-grid">
+
+
+<div>
+💜
+<h3>
+Emotional Support
+</h3>
+<p>
+Talk through your thoughts.
+</p>
+</div>
+
+
+<div>
+🧠
+<h3>
+Self Reflection
+</h3>
+<p>
+Understand yourself better.
+</p>
+</div>
+
+
+<div>
+🌱
+<h3>
+Social Growth
+</h3>
+<p>
+Improve communication.
+</p>
+</div>
+
+
+<div>
+❤️
+<h3>
+Relationships
+</h3>
+<p>
+Build better connections.
+</p>
+</div>
+
+
+<div>
+📚
+<h3>
+Learning
+</h3>
+<p>
+Study and solve problems.
+</p>
+</div>
+
+
+<div>
+✨
+<h3>
+Personal Growth
+</h3>
+<p>
+Create better habits.
+</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- PRICING -->
+
+
+<section class="section pricing reveal">
 
 
 <h2>
@@ -249,25 +377,19 @@ Choose Your Plan
 </h3>
 
 <p>
-On-demand emotional support.
+Immediate emotional support.
 </p>
-
-<ul>
-<li>Quick conversations</li>
-<li>Vent sessions</li>
-<li>Mood reset</li>
-<li>Late-night thoughts</li>
-</ul>
 
 <h4>
 ₦50 / Token
 </h4>
 
-<button
-class="payment-btn"
-data-plan="talk-now"
-data-link="FLUTTERWAVE_LINK">
+<button 
+class="payment-btn action-btn"
+data-link="flutterwave">
+
 Start
+
 </button>
 
 </div>
@@ -286,13 +408,6 @@ Start
 Your everyday AI companion.
 </p>
 
-<ul>
-<li>Daily conversations</li>
-<li>Mood tracking</li>
-<li>Journaling prompts</li>
-<li>Reflection sessions</li>
-</ul>
-
 <h4>
 ₦135/day
 </h4>
@@ -301,11 +416,12 @@ Your everyday AI companion.
 ₦645/week
 </h4>
 
-<button
-class="payment-btn"
-data-plan="talk-now"
-data-link="FLUTTERWAVE_LINK">
+<button 
+class="payment-btn action-btn"
+data-link="flutterwave">
+
 Start
+
 </button>
 
 </div>
@@ -324,12 +440,6 @@ Start
 Build confidence and communication.
 </p>
 
-<ul>
-<li>Conversation practice</li>
-<li>Confidence building</li>
-<li>Communication exercises</li>
-</ul>
-
 <h4>
 ₦180/day
 </h4>
@@ -338,14 +448,18 @@ Build confidence and communication.
 ₦715/week
 </h4>
 
-<button
-class="payment-btn"
-data-plan="talk-now"
-data-link="FLUTTERWAVE_LINK">
+
+<button 
+class="payment-btn action-btn"
+data-link="flutterwave">
+
 Start
+
 </button>
 
+
 </div>
+
 
 
 
@@ -358,14 +472,8 @@ Start
 </h3>
 
 <p>
-Improve how you connect.
+Improve connections.
 </p>
-
-<ul>
-<li>Better conversations</li>
-<li>Relationship advice</li>
-<li>Text improvement</li>
-</ul>
 
 <h4>
 ₦215/day
@@ -375,14 +483,18 @@ Improve how you connect.
 ₦830/week
 </h4>
 
-<button
-class="payment-btn"
-data-plan="talk-now"
-data-link="FLUTTERWAVE_LINK">
+
+<button 
+class="payment-btn action-btn"
+data-link="flutterwave">
+
 Start
+
 </button>
 
+
 </div>
+
 
 
 
@@ -395,15 +507,8 @@ Start
 </h3>
 
 <p>
-AI tutor and personal assistant.
+AI tutor and assistant.
 </p>
-
-<ul>
-<li>Study assistance</li>
-<li>Explanations</li>
-<li>Writing improvement</li>
-<li>Decision support</li>
-</ul>
 
 <h4>
 ₦320/day
@@ -413,18 +518,23 @@ AI tutor and personal assistant.
 ₦1080/week
 </h4>
 
-<button
-class="payment-btn"
-data-plan="talk-now"
-data-link="FLUTTERWAVE_LINK">
+
+<button 
+class="payment-btn action-btn"
+data-link="flutterwave">
+
 Start
+
 </button>
 
-</div>
-
-
 
 </div>
+
+
+
+
+</div>
+
 
 </section>
 
@@ -432,11 +542,18 @@ Start
 
 
 
-<section class="cta">
+
+
+<!-- CTA -->
+
+
+<section class="cta reveal">
+
 
 <h2>
 Start your conversation today.
 </h2>
+
 
 <p>
 Private conversations.
@@ -444,11 +561,16 @@ Personal growth.
 A companion whenever you need one.
 </p>
 
+
 <button 
-class="primary-btn"
-data-link="https://wa.me/message/OUF4STQZYSP5E1">
-Start Talking
+class="primary-btn action-btn"
+data-link="whatsapp">
+
+Chat With Thera
+
 </button>
+
+
 
 </section>
 
@@ -459,5 +581,7 @@ Start Talking
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
