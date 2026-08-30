@@ -940,3 +940,77 @@ font-size:55px;
     }
 
 }
+
+
+
+/* PARTICLES */
+
+.particle {
+
+position:absolute;
+
+width:3px;
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.7;
+
+animation:
+particleFloat 8s infinite ease-in-out;
+
+}
+
+
+@keyframes particleFloat {
+
+
+50% {
+
+transform:
+translateY(-40px);
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+.geo {
+
+position:fixed;
+
+color:
+rgba(255,255,255,.35);
+
+font-size:18px;
+
+pointer-events:none;
+
+z-index:-1;
+
+animation:
+geoFloat 12s infinite ease-in-out;
+
+}
+
+
+
+@keyframes geoFloat {
+
+
+50% {
+
+transform:
+translateY(-80px)
+rotate(180deg);
+
+}
+
+
+}
